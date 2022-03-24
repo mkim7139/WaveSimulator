@@ -38,6 +38,7 @@ void CreateRect(float width, float height, float x, float y, float* vertices)
 
 int main(void)
 {
+    cout << " my edit " << endl;
     // initialize glfw
     glfwInit();
     
