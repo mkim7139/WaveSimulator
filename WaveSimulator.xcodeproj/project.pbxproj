@@ -47,7 +47,7 @@
 		50611DC327E6BC27008E255F /* PointSource.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PointSource.cpp; sourceTree = "<group>"; };
 		50611DC427E6BC27008E255F /* PointSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PointSource.h; sourceTree = "<group>"; };
 		50626D2627D3F38E00EAC976 /* glad.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
-		5065B60B27D3354C00A6AFA8 /* HelloOpenGl */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HelloOpenGl; sourceTree = BUILT_PRODUCTS_DIR; };
+		5065B60B27D3354C00A6AFA8 /* WaveSimulator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WaveSimulator; sourceTree = BUILT_PRODUCTS_DIR; };
 		5065B60E27D3354D00A6AFA8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		5065B61627D337FC00A6AFA8 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		5065B61827D338AB00A6AFA8 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../usr/local/Cellar/glfw/3.3.6/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				5036C74227D8295100C6403E /* Resources */,
-				5065B60D27D3354D00A6AFA8 /* HelloOpenGl */,
+				5065B60D27D3354D00A6AFA8 /* WaveSimulator */,
 				5065B60C27D3354C00A6AFA8 /* Products */,
 				5065B61527D337FC00A6AFA8 /* Frameworks */,
 			);
@@ -119,12 +119,12 @@
 		5065B60C27D3354C00A6AFA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5065B60B27D3354C00A6AFA8 /* HelloOpenGl */,
+				5065B60B27D3354C00A6AFA8 /* WaveSimulator */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5065B60D27D3354D00A6AFA8 /* HelloOpenGl */ = {
+		5065B60D27D3354D00A6AFA8 /* WaveSimulator */ = {
 			isa = PBXGroup;
 			children = (
 				5065B60E27D3354D00A6AFA8 /* main.cpp */,
@@ -140,7 +140,7 @@
 				50611DC327E6BC27008E255F /* PointSource.cpp */,
 				50611DC427E6BC27008E255F /* PointSource.h */,
 			);
-			path = HelloOpenGl;
+			path = WaveSimulator;
 			sourceTree = "<group>";
 		};
 		5065B61527D337FC00A6AFA8 /* Frameworks */ = {
@@ -164,9 +164,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5065B60A27D3354C00A6AFA8 /* HelloOpenGl */ = {
+		5065B60A27D3354C00A6AFA8 /* WaveSimulator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5065B61227D3354D00A6AFA8 /* Build configuration list for PBXNativeTarget "HelloOpenGl" */;
+			buildConfigurationList = 5065B61227D3354D00A6AFA8 /* Build configuration list for PBXNativeTarget "WaveSimulator" */;
 			buildPhases = (
 				5065B60727D3354C00A6AFA8 /* Sources */,
 				5065B60827D3354C00A6AFA8 /* Frameworks */,
@@ -176,9 +176,9 @@
 			);
 			dependencies = (
 			);
-			name = HelloOpenGl;
+			name = WaveSimulator;
 			productName = HelloOpenGl;
-			productReference = 5065B60B27D3354C00A6AFA8 /* HelloOpenGl */;
+			productReference = 5065B60B27D3354C00A6AFA8 /* WaveSimulator */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -195,7 +195,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5065B60627D3354C00A6AFA8 /* Build configuration list for PBXProject "HelloOpenGl" */;
+			buildConfigurationList = 5065B60627D3354C00A6AFA8 /* Build configuration list for PBXProject "WaveSimulator" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -208,7 +208,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5065B60A27D3354C00A6AFA8 /* HelloOpenGl */,
+				5065B60A27D3354C00A6AFA8 /* WaveSimulator */,
 			);
 		};
 /* End PBXProject section */
@@ -380,7 +380,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5065B60627D3354C00A6AFA8 /* Build configuration list for PBXProject "HelloOpenGl" */ = {
+		5065B60627D3354C00A6AFA8 /* Build configuration list for PBXProject "WaveSimulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5065B61027D3354D00A6AFA8 /* Debug */,
@@ -389,7 +389,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5065B61227D3354D00A6AFA8 /* Build configuration list for PBXNativeTarget "HelloOpenGl" */ = {
+		5065B61227D3354D00A6AFA8 /* Build configuration list for PBXNativeTarget "WaveSimulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5065B61327D3354D00A6AFA8 /* Debug */,
