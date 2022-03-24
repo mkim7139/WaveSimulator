@@ -34,8 +34,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5036C74427D8298700C6403E /* VertShader.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = VertShader.vert; path = ../../../../XCodeProjects/HelloOpenGl/Resources/Shaders/VertShader.vert; sourceTree = "<group>"; };
-		5036C74527D829A300C6403E /* FragShader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = FragShader.frag; path = ../../../../XCodeProjects/HelloOpenGl/Resources/shaders/FragShader.frag; sourceTree = "<group>"; };
+		5036C74427D8298700C6403E /* VertShader.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VertShader.vert; sourceTree = "<group>"; };
+		5036C74527D829A300C6403E /* FragShader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragShader.frag; sourceTree = "<group>"; };
 		5036C74927D97D2300C6403E /* VertexBuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VertexBuffer.cpp; sourceTree = "<group>"; };
 		5036C74A27D97D2300C6403E /* VertexBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VertexBuffer.h; sourceTree = "<group>"; };
 		5036C74C27D9821A00C6403E /* IndexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexBuffer.cpp; sourceTree = "<group>"; };
