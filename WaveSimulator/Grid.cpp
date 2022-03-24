@@ -18,9 +18,6 @@ Grid::Grid(float width, float height, float x_corner, float y_corner, unsigned i
     row_count = rows;
     col_count = columns;
     
-    cout << row_count << endl;
-    cout << col_count << endl;
-    
     // initialize vertices and indices by insuring all values are 0
     for (unsigned int i=0; i < size(vertices); i++) {
         vertices[i]=0;
@@ -46,8 +43,8 @@ Grid::Grid(float width, float height, float x_corner, float y_corner, unsigned i
     float x_vertex;
     float y_vertex;
     
-    float square_width = width / col_count;
-    float square_height = height / row_count;
+    float rect_width = width / col_count;
+    float rect_height = height / row_count;
     
     unsigned int vertex_index=0; // index of value within vertices
     
@@ -57,16 +54,17 @@ Grid::Grid(float width, float height, float x_corner, float y_corner, unsigned i
     //   0, 0,               0,                0,                  0,                   0
     //
     for (unsigned int j=0; j <= row_count; j++) {
-        for (unsigned int i=0; i < 6*(col_count + 1); i++) {
+        for (unsigned int i=0; i < 2*(col_count + 1); i++) {
             
-            // set every i==n*6 to x coord, every i==n*7 to y coord
-            if( vertex_index%6 == 0) {
-                x_vertex = x_corner + (i / 6) * square_width;
-                y_vertex = y_corner + j * square_height;
-
-                vertices[vertex_index] = x_vertex;
-                vertices[vertex_index + 1] = y_vertex;
+            // set every i==n*2 to x coord
+            if( vertex_index%2 == 0) {
+                vertices[vertex_index] = i/2 * rect_width + x_corner;
+//                cout << vertex_index << "   " << "x_val = " << i/2 * rect_width + x_corner <<  endl;   Use this line for debugging
+            } else {
+                vertices[vertex_index] = j * rect_height + y_corner;
+//                cout << vertex_index << "   " << "y_val = " << j * rect_height  + y_corner << endl;    Use this line for debugging
             }
+            
             vertex_index++; // index must be updated at end to allow for easy indexing of vertices array
         }
     }

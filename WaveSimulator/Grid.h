@@ -12,8 +12,8 @@ class Grid
 private:
     unsigned int row_count, col_count;
     // TODO: make size of indices and vertices line up
-    float vertices[60000];
-    unsigned int indices[60000];
+    float vertices[1000000];
+    unsigned int indices[1000000];
 public:
     Grid(float width, float height, float x_corner, float y_corner, unsigned int row_count, unsigned int col_count);
     

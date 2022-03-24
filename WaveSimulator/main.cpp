@@ -63,7 +63,10 @@ int main(void)
     ///
     ///
     ///
-
+    ///
+    unsigned int rows = 200;
+    unsigned int columns = 200;
+    
     float width = 2.0f;
     float height = 2.0f;
     float corner_x = -1.0f;
@@ -71,6 +74,7 @@ int main(void)
     
     float vertices[8];
 
+    Grid grid(width, height, corner_x, corner_y, rows, columns);
     CreateRect(width, height, corner_x, corner_y, vertices);
 
     unsigned int indices[] = {
@@ -100,8 +104,8 @@ int main(void)
     
     // vertex buffer object - stores vertex array data allocated by the GL context on the GPU
     // element array buffer object - stores index array data
-    VertexBuffer VBO(vertices, sizeof(vertices));
-    IndexBuffer EBO(indices, sizeof(indices));
+    VertexBuffer VBO(grid.GetVertices(), grid.SizeOfVertices());
+    IndexBuffer EBO(grid.GetIndices(), grid.SizeOfIndices());
     
     // specify how to read vertex array data
     VAO.AttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2, 0);
@@ -135,32 +139,33 @@ int main(void)
     int source_count_location = shaderProgram.GetUniformLocation(source_count_uniform);
     
     // point source data
-//    PointSource sources;
-//
-//    sources.NewSource(1.0f, 2.5f, 90.0f, 0.1f, 1.0f);
+    float source_data[200];
+    int empty_slot = 0;
+    
+    PointSource source_0(0.0f, 0.0f, 1.0f, 0.1f, 1.0f, source_data, empty_slot);
+    PointSource source_1(1.0f, 1.0f, 90.0f, 0.1f, 1.0f, source_data, empty_slot);
+    PointSource source_2(-1.0f, 1.0f, 90.0f, 0.1f, 1.0f, source_data, empty_slot);
 //    sources.NewSource(-0.5f, 2.5f, 2.0f, 0.6f, 1.0f);
 //    sources.NewSource(0.4f, 1.35f, 70.0f, 0.2f, 1.0f);
 //    sources.NewSource(1.7f, 1.25f, 60.0f, 0.1f, 1.0f);
 //
-    int source_count = 1;
-
 
     
-    float source_data[200];
+    int source_count = 3;
+
     
+//    for ( int i=0; i<size(source_data); i++) {
+//        source_data[i] = 0;
+//    }
     
-    for ( int i=0; i<size(source_data); i++) {
-        source_data[i] = 0;
-    }
+//    source_data[0] = 0.0f;
+//    source_data[1] = 0.0f;
+//    source_data[2] = 90.0f;
+//    source_data[3] = 0.1f;
+//    source_data[4] = 1.0f;
     
-    source_data[0] = 1.0f;
-    source_data[1] = 1.0f;
-    source_data[2] = 90.0f;
-    source_data[3] = 0.1f;
-    source_data[4] = 1.0f;
-    
-    glUniform1fv(source_location, size(source_data), source_data);
-    glUniform1i(source_count_location, source_count);
+//    glUniform1fv(source_location, size(source_data), source_data);
+//    glUniform1i(source_count_location, source_count);
 
     
     // set background color - must be float array of length 4
@@ -178,6 +183,12 @@ int main(void)
         t += 0.03f;
         glUniform1f(timer_location, t);
         
+        // update point source data
+        source_2.UpdateSource(-1.0f + 0.1*t, 1.0f);
+
+        glUniform1fv(source_location, size(source_data), source_data);
+        glUniform1i(source_count_location, source_count);
+
         // draw shapes and background
         renderer.Background(bgColor);
         renderer.Draw(VAO, EBO, shaderProgram);

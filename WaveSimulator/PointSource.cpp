@@ -11,28 +11,34 @@
 
 using namespace std;
 
-PointSource::PointSource()
+PointSource::PointSource(float x, float y, float freq_spatial, float freq_temporal, float amplitude, float* data_pointer, int& empty_slot)
 {
+    data_index = empty_slot;
+    source_data_location = data_pointer;
     
-}
-
-void PointSource::NewSource(float x, float y, float freq_spatial, float freq_temporal, float amplitude)
-{
-    source_data[empty_slot]     = x;
-    source_data[empty_slot + 1] = y;
-    source_data[empty_slot + 2] = freq_spatial;
-    source_data[empty_slot + 3] = freq_temporal;
-    source_data[empty_slot + 4] = amplitude;
+    source_data_location[data_index]     = x;
+    source_data_location[data_index + 1] = y;
+    source_data_location[data_index + 2] = freq_spatial;
+    source_data_location[data_index + 3] = freq_temporal;
+    source_data_location[data_index + 4] = amplitude;
     
     empty_slot += 5;
 }
 
-int PointSource::GetDataCount()
+void PointSource::UpdateSource(float x, float y)
 {
-    return size(source_data);
+    source_data_location[data_index]     = x;
+    source_data_location[data_index + 1] = y;
 }
 
-float* PointSource::GetData()
+void PointSource::NewSource(float x, float y, float freq_spatial, float freq_temporal, float amplitude)
 {
-    return source_data;
+//    source_data[*empty_slot]     = x;
+//    source_data[*empty_slot + 1] = y;
+//    source_data[*empty_slot + 2] = freq_spatial;
+//    source_data[*empty_slot + 3] = freq_temporal;
+//    source_data[*empty_slot + 4] = amplitude;
+//
+//    *empty_slot += 5;
 }
+
