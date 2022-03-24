@@ -13,7 +13,7 @@ using namespace std;
 
 PointSource::PointSource()
 {
-    empty_slot = 0;
+    
 }
 
 void PointSource::NewSource(float x, float y, float freq_spatial, float freq_temporal, float amplitude)

@@ -135,17 +135,31 @@ int main(void)
     int source_count_location = shaderProgram.GetUniformLocation(source_count_uniform);
     
     // point source data
-    PointSource sources;
+//    PointSource sources;
+//
+//    sources.NewSource(1.0f, 2.5f, 90.0f, 0.1f, 1.0f);
+//    sources.NewSource(-0.5f, 2.5f, 2.0f, 0.6f, 1.0f);
+//    sources.NewSource(0.4f, 1.35f, 70.0f, 0.2f, 1.0f);
+//    sources.NewSource(1.7f, 1.25f, 60.0f, 0.1f, 1.0f);
+//
+    int source_count = 1;
+
+
     
-    sources.NewSource(1.0f, 2.5f, 90.0f, 0.1f, 1.0f);
-    sources.NewSource(-0.5f, 2.5f, 2.0f, 0.6f, 1.0f);
-    sources.NewSource(0.4f, 1.35f, 70.0f, 0.2f, 1.0f);
-    sources.NewSource(1.7f, 1.25f, 60.0f, 0.1f, 1.0f);
-    
-    int source_count = 4;
+    float source_data[200];
     
     
-    glUniform1fv(source_location, sources.GetDataCount(), sources.GetData());
+    for ( int i=0; i<size(source_data); i++) {
+        source_data[i] = 0;
+    }
+    
+    source_data[0] = 1.0f;
+    source_data[1] = 1.0f;
+    source_data[2] = 90.0f;
+    source_data[3] = 0.1f;
+    source_data[4] = 1.0f;
+    
+    glUniform1fv(source_location, size(source_data), source_data);
     glUniform1i(source_count_location, source_count);
 
     
