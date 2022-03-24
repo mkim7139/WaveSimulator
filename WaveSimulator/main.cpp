@@ -82,8 +82,8 @@ int main(void)
     ///
     ///
     // specify shader paths in directory
-    string vertPath = "/Users/max/XCodeProjects/HelloOpenGl/Resources/Shaders/VertShader.vert";
-    string fragPath = "/Users/max/XCodeProjects/HelloOpenGl/Resources/shaders/FragShader.frag";
+    string vertPath = "/Users/max/XCodeProjects/WaveSimulator/Resources/Shaders/VertShader.vert";
+    string fragPath = "/Users/max/XCodeProjects/WaveSimulator/Resources/shaders/FragShader.frag";
 
     // generate shader program and attach vertex and fragment shaders
     Shader shaderProgram;
